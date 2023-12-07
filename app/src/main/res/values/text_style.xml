@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="pretendard.black">
+        <item name="fontFamily">@font/pretendard_black</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.extrabold">
+        <item name="fontFamily">@font/pretendard_extrabold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.bold">
+        <item name="fontFamily">@font/pretendard_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.semibold">
+        <item name="fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard">
+        <item name="fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.regular">
+        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.light">
+        <item name="fontFamily">@font/pretendard_light</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.extralight">
+        <item name="fontFamily">@font/pretendard_extralight</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="pretendard.thin">
+        <item name="fontFamily">@font/pretendard_thin</item>
+    </style>
+</resources>

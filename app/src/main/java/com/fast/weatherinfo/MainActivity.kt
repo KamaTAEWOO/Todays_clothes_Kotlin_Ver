@@ -1,11 +1,21 @@
 package com.fast.weatherinfo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.eduforall.eduforall_launcher_app.base.BaseActivity
+import com.fast.weatherinfo.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    override fun getActivityBinding(): ActivityMainBinding =
+        ActivityMainBinding.inflate(layoutInflater)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        /**
+         * 앱 시작 부분
+         */
+        //startActivity(Intent(this, AppUpdateActivity::class.java))
     }
 }
