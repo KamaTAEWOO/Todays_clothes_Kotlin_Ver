@@ -13,9 +13,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /**
-         * 앱 시작 부분
-         */
+
         //startActivity(Intent(this, AppUpdateActivity::class.java))
     }
 }
