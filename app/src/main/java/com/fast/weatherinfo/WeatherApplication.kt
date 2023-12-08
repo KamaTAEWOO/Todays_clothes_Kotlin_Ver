@@ -1,7 +1,8 @@
 package com.fast.weatherinfo
 
 import android.app.Application
-import com.eduforall.eduforall_launcher_app.util.EduforallDebugTree
+import androidx.databinding.ktx.BuildConfig
+import com.fast.weatherinfo.util.WeatherDebugTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -15,7 +16,7 @@ class WeatherApplication : Application() {
         super.onCreate()
 
         if (BuildConfig.DEBUG) {
-            Timber.plant(EduforallDebugTree())
+            Timber.plant(WeatherDebugTree())
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.eduforall.eduforall_launcher_app.base
+package com.fast.weatherinfo.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
