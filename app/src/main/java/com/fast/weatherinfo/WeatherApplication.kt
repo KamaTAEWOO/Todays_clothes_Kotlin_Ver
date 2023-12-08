@@ -1,7 +1,6 @@
 package com.fast.weatherinfo
 
 import android.app.Application
-import androidx.databinding.ktx.BuildConfig
 import com.fast.weatherinfo.util.WeatherDebugTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
