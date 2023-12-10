@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<!--    <item-->
-<!--        android:id="@+id/prevent_fragment"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/ic_prevent"-->
-<!--        android:title="@string/menu_prevent" />-->
+    <item
+        android:id="@+id/"
+        android:enabled="true"
+        android:icon="@drawable/ic_prevent"
+        android:title="@string/menu_prevent" />
 
-<!--    <item-->
-<!--        android:id="@+id/video_fragment"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/ic_video"-->
-<!--        android:title="@string/menu_video" />-->
+    <item
+        android:id="@+id/video_fragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_video"
+        android:title="@string/menu_video" />
 
-<!--    <item-->
-<!--        android:id="@+id/guide_fragment"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/ic_guide"-->
-<!--        android:title="@string/menu_guide" />-->
+    <item
+        android:id="@+id/guide_fragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_guide"
+        android:title="@string/menu_guide" />
 </menu>
