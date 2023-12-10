@@ -3,24 +3,24 @@
     <item
         android:id="@+id/weather_fragment"
         android:enabled="true"
-        android:icon="@drawable/iweather"
+        android:icon="@drawable/ic_weather"
         android:title="@string/weather_fragment" />
 
     <item
         android:id="@+id/recommend_clothes_fragment"
         android:enabled="true"
-        android:icon="@drawable/clothes60"
+        android:icon="@drawable/ic_clothes"
         android:title="@string/recommend_clothes_fragment" />
 
     <item
         android:id="@+id/my_closet_fragment"
         android:enabled="true"
-        android:icon="@drawable/closet48"
+        android:icon="@drawable/ic_closet"
         android:title="@string/my_closet_fragment" />
 
     <item
         android:id="@+id/my_style_fragment"
         android:enabled="true"
-        android:icon="@drawable/circle"
+        android:icon="@drawable/ic_mycody"
         android:title="@string/my_style_fragment" />
 </menu>
