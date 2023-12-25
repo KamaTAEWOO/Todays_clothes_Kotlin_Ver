@@ -1,5 +1,6 @@
 package com.fast.weatherinfo.di
 
+import com.fast.weatherinfo.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +25,7 @@ object RetrofitModule {
     ): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(nullOnEmptyConverterFactory)
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

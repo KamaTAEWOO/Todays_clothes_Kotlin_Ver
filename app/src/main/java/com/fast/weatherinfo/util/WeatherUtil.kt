@@ -12,6 +12,15 @@ object WeatherUtil {
     private const val SHARED_PREFS_NAME = "weatherinfo_app_shared_prefs"
     private const val LOGIN_KEY = "login_result"
 
+    // Request Weather Data
+    const val PAGE_NO = 1
+    const val NUM_OF_ROWS = 1000
+    const val DATA_TYPE = "JSON"
+    const val BASE_DATE = "20231224"
+    const val BASE_TIME = "0500"
+    const val NX = "55"
+    const val NY = "127"
+
     /**
      ** 날짜 format 변경
      */
