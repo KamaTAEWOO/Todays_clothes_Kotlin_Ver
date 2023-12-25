@@ -54,8 +54,10 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
         binding.bottomNavigationView.setupWithNavController(navController)
     }
 
+    /**
+     * Item(baseDate=20231224, baseTime=0500, category=VVV, fcstDate=20231226, fcstTime=1900, fcstValue=-1.7, nx=55, ny=127)
+     * */
     private fun getWeatherData() {
-
         Timber.i("$TAG::getWeatherData()")
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -67,11 +69,7 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
                     WeatherUtil.BASE_TIME,
                     WeatherUtil.NX,
                     WeatherUtil.NY
-                ).collect {
-                    it.response.body.items.item.forEach { item ->
-                        Timber.i("$TAG::getWeatherData()::collect()::item = $item")
-                    }
-                }
+                )
             }
         }
     }

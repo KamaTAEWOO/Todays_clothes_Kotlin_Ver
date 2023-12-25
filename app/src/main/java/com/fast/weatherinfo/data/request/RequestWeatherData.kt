@@ -2,7 +2,7 @@ package com.fast.weatherinfo.data.request
 
 import com.fast.weatherinfo.BuildConfig
 
-data class RequestWeatherDataEntity(
+data class RequestWeatherData(
     val serviceKey: String = BuildConfig.API_KEY,
     val pageNo: Int = 1,
     val numOfRows: Int = 1000,
