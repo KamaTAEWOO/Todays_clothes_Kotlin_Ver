@@ -1,13 +1,13 @@
 package com.fast.weatherinfo.viewmodel
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fast.weatherinfo.data.model.WeatherDataEntity
 import com.fast.weatherinfo.repository.WeatherDataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
@@ -18,7 +18,12 @@ class WeatherDataViewModel @Inject constructor(
     private val weatherDataRepository: WeatherDataRepository
 ) : ViewModel() {
     private val TAG = "WeatherDataViewModel::"
-    private val weatherData: MutableList<WeatherDataEntity> = mutableListOf()
+    private val _weatherData: MutableList<WeatherDataEntity> = mutableListOf()
+    val weatherData = _weatherData
+    private val _weatherDataString: MutableLiveData<String> = MutableLiveData("")
+    val weatherDataString: LiveData<String> = _weatherDataString
+    private val _result = MutableLiveData<Boolean>(false)
+    val result = _result
 
     fun requestWeatherData(
         pageNo: Int,
@@ -41,7 +46,7 @@ class WeatherDataViewModel @Inject constructor(
         .onEach {
             Timber.d("$TAG requestWeatherData() $it")
             for(i in it.response.body.items.item.indices) {
-                weatherData.add(
+                _weatherData.add(
                     WeatherDataEntity(
                         it.response.body.items.item[i].baseDate,
                         it.response.body.items.item[i].baseTime,
@@ -53,7 +58,9 @@ class WeatherDataViewModel @Inject constructor(
                         it.response.body.items.item[i].ny
                     )
                 )
+                _weatherDataString.value += it.response.body.items.item[i].toString()
             }
+            _result.value = true
         }
         .catch { e -> e.printStackTrace() }
         .launchIn(viewModelScope)

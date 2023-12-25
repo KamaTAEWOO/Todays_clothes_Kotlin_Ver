@@ -73,5 +73,4 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
             }
         }
     }
-
 }
