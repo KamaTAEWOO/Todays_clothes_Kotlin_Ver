@@ -20,10 +20,8 @@ class WeatherDataViewModel @Inject constructor(
     private val TAG = "WeatherDataViewModel::"
     private val _weatherData: MutableList<WeatherDataEntity> = mutableListOf()
     val weatherData = _weatherData
-    private val _weatherDataString: MutableLiveData<String> = MutableLiveData("")
-    val weatherDataString: LiveData<String> = _weatherDataString
-    private val _result = MutableLiveData<Boolean>(false)
-    val result = _result
+    private val _result: MutableLiveData<Boolean> = MutableLiveData(false)
+    var result: LiveData<Boolean> = _result
 
     fun requestWeatherData(
         pageNo: Int,
@@ -58,7 +56,6 @@ class WeatherDataViewModel @Inject constructor(
                         it.response.body.items.item[i].ny
                     )
                 )
-                _weatherDataString.value += it.response.body.items.item[i].toString()
             }
             _result.value = true
         }

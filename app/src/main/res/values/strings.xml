@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">뭐 입을까?</string>
 
-<!--    Bottom navigation-->
+    <!--    Bottom navigation-->
     <string name="weather_fragment">날씨</string>
     <string name="recommend_clothes_fragment">추천 옷</string>
     <string name="my_closet_fragment">내 옷장</string>

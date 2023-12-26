@@ -1,5 +1,6 @@
 package com.fast.weatherinfo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
@@ -12,14 +13,12 @@ import com.fast.weatherinfo.databinding.ActivityWeatherDataBinding
 import com.fast.weatherinfo.util.WeatherUtil
 import com.fast.weatherinfo.viewmodel.WeatherDataViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
 class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
     private val TAG = "WeatherDataActivity::"
-
     private val weatherDataViewModel: WeatherDataViewModel by viewModels()
 
     override fun getActivityBinding(): ActivityWeatherDataBinding =
@@ -27,24 +26,31 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.i("$TAG::날씨 데이터 파싱")
-
-        initViewModel()
-        initBottomNavigation()
         init()
+        initBottomNavigation()
     }
 
     private fun init() {
         Timber.i("$TAG::init()")
-        getWeatherData()
-    }
 
-    private fun initViewModel() {
-        Timber.i("$TAG::initViewModel()")
-        binding.apply {
-            lifecycleOwner = this@WeatherDataActivity
-            viewModel = weatherDataViewModel
+        if(weatherDataViewModel.weatherData.isEmpty()) {
+            getWeatherData()
         }
+
+        // result data check
+//        weatherDataViewModel.result.observe(this) {
+//            val result = it
+//            Timber.d("$TAG::result.observe() $result")
+//            if(result && isFirst) {
+//                val fragment = WeatherFragment()
+//
+//                supportFragmentManager.beginTransaction()
+//                    .replace(R.id.weather_fragment, fragment)
+//                    .commit()
+//
+//                isFirst = false
+//            }
+//        }
     }
 
     private fun initBottomNavigation() {
@@ -72,5 +78,9 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
                 )
             }
         }
+    }
+
+    companion object {
+        private var isFirst = true
     }
 }
