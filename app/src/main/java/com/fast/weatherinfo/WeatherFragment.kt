@@ -1,6 +1,7 @@
 package com.fast.weatherinfo
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.fast.weatherinfo.base.BaseFragment
@@ -52,7 +53,4 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding>() {
         Timber.i("$TAG::initViewModel()")
         weatherDataViewModel = ViewModelProvider(requireActivity())[WeatherDataViewModel::class.java]
     }
-
-
-
 }

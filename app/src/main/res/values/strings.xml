@@ -7,4 +7,6 @@
     <string name="my_closet_fragment">내 옷장</string>
     <string name="my_style_fragment">내 스타일</string>
 
+    <!--    Weather Data-->
+    <string name="not_data">데이터 없음</string>
 </resources>

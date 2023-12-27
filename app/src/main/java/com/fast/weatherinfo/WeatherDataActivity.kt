@@ -36,21 +36,6 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
         if(weatherDataViewModel.weatherData.isEmpty()) {
             getWeatherData()
         }
-
-        // result data check
-//        weatherDataViewModel.result.observe(this) {
-//            val result = it
-//            Timber.d("$TAG::result.observe() $result")
-//            if(result && isFirst) {
-//                val fragment = WeatherFragment()
-//
-//                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.weather_fragment, fragment)
-//                    .commit()
-//
-//                isFirst = false
-//            }
-//        }
     }
 
     private fun initBottomNavigation() {
@@ -78,9 +63,5 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
                 )
             }
         }
-    }
-
-    companion object {
-        private var isFirst = true
     }
 }
