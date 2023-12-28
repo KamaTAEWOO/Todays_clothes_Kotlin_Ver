@@ -10,7 +10,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -45,7 +44,7 @@ class WeatherDataViewModel @Inject constructor(
         ny
     )
         .onEach {
-            Timber.d("$TAG requestWeatherData() $it")
+            //Timber.d("$TAG requestWeatherData() $it")
             for(i in it.response.body.items.item.indices) {
                 weatherFcstValue = it.response.body.items.item[i].fcstValue
 
@@ -85,6 +84,9 @@ class WeatherDataViewModel @Inject constructor(
             "WAV" -> "파고"
             "VEC" -> "풍향"
             "WSD" -> "풍속"
+            "TMP" -> "1시간 기온"
+            "SNO" -> "1시간 신적설"
+            "PCP" -> "1시간 강수량"
             else -> ""
         }
         if (data == "하늘상태")
@@ -123,20 +125,24 @@ class WeatherDataViewModel @Inject constructor(
     }
 
     // 현재시간에 따른 측정시간 값
-    private fun measurementTime(timedata: String): String? {
-        var hour = timedata.substring(11, 13) // 시간만 들고옴.
-        hour += "00"
-        hour = when (hour) {
-            "0200", "0300", "0400" -> "0300"
-            "0500", "0600", "0700" -> "0600"
-            "0800", "0900", "1000" -> "0900"
-            "1100", "1200", "1300" -> "1200"
-            "1400", "1500", "1600" -> "1500"
-            "1700", "1800", "1900" -> "1800"
-            "2000", "2100", "2200", "2300" -> "2100"
-            else -> "0000"
+    fun timeChange(time: String?): String? {
+        // 현재 시간에 따라 데이터 시간 설정(3시간 마다 업데이트) //
+        /**
+         * 시간은 3시간 단위로 조회해야 한다. 안그러면 정보가 없다고 뜬다.
+         * 0200, 0500, 0800 ~ 2300까지
+         * 그래서 시간을 입력했을때 switch문으로 조회 가능한 시간대로 변경해주었다.
+         */
+        var time = time
+        time = when (time) {
+            "0200", "0300", "0400" -> "0200"
+            "0500", "0600", "0700" -> "0500"
+            "0800", "0900", "1000" -> "0800"
+            "1100", "1200", "1300" -> "1100"
+            "1400", "1500", "1600" -> "1400"
+            "1700", "1800", "1900" -> "1700"
+            "2000", "2100", "2200" -> "2000"
+            else -> "2300"
         }
-        //Timber.d("$TAG::measurement_Time() $hour")
-        return hour
+        return time
     }
 }
