@@ -65,4 +65,6 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
             }
         }
     }
+
+    override fun onBackPressed() {}
 }

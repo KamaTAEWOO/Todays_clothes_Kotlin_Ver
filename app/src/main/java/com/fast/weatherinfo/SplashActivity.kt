@@ -23,9 +23,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         // 3초 후에 Intent 실행
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, WeatherDataActivity::class.java))
-            finish() // 현재 액티비티를 종료하려면 사용 (선택 사항)
-        }, 3000) // 3000 밀리초 = 3초
-
-
+            finish()
+        }, 3000)
     }
+
+    override fun onBackPressed() {}
 }
