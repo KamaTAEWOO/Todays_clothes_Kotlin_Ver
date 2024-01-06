@@ -9,4 +9,8 @@
 
     <!--    Weather Data-->
     <string name="not_data">데이터 없음</string>
+    <string name="splash_name1">Today\'s</string>
+    <string name="splash_name2">Clothes</string>
+    <string name="splash_name3">오늘 날씨 어때? 뭐 입지?</string>
+    <string name="splash_name4">출처: 앱에 사용된 이미지의 출처는 무신사에 있음을 알림.</string>
 </resources>

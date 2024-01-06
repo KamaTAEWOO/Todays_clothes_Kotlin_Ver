@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".SplashActivity"
+            android:exported="true" />
+        <activity
             android:name=".WeatherDataActivity"
             android:exported="true" />
         <activity

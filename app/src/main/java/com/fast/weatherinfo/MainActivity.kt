@@ -21,6 +21,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
          * 앱 시작
          * */
         Timber.d("$TAG::앱 시작")
-        startActivity(Intent(this, WeatherDataActivity::class.java))
+        startActivity(Intent(this, SplashActivity::class.java))
     }
 }

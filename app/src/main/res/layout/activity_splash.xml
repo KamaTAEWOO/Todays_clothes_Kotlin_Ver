@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_vector"
+        app:tint="@color/logo_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <TextView
+        android:id="@+id/tv_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:fontFamily="@font/segoepr"
+        android:text="@string/splash_name1"
+        android:textColor="@color/splash_name"
+        android:textSize="75sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/segoepr"
+        android:text="@string/splash_name2"
+        android:textColor="@color/splash_name"
+        android:textSize="75sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_name1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_name3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="264dp"
+        android:fontFamily="@font/maplestory_bold"
+        android:text="@string/splash_name3"
+        android:textColor="@color/splash_name"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_name2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/maplestory_light"
+        android:text="@string/splash_name4"
+        android:textColor="@color/splash_name"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
