@@ -1,6 +1,5 @@
 package com.fast.weatherinfo
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
@@ -51,6 +50,7 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
      * */
     private fun getWeatherData() {
         Timber.i("$TAG::getWeatherData()")
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 weatherDataViewModel.requestWeatherData(

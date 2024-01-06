@@ -26,6 +26,21 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding>() {
 
     private fun init() {
         Timber.i("$TAG::init()")
+        weatherDataReceive()
+
+        /**
+         * Refresh
+         * */
+        //binding.swipeRefreshLayout.setOnRefreshListener {}
+    }
+
+    private fun initViewModel() {
+        Timber.i("$TAG::initViewModel()")
+        weatherDataViewModel = ViewModelProvider(requireActivity())[WeatherDataViewModel::class.java]
+    }
+
+    private fun weatherDataReceive() {
+        Timber.i("$TAG::weatherDataReceive()")
 
         var data = ""
         weatherDataViewModel.result.observe(viewLifecycleOwner) { resultData ->
@@ -38,18 +53,8 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding>() {
                 }
                 binding.textView.text = data
             } else {
-                binding.textView.text = "데이터 없음"
+                binding.textView.text = getString(R.string.not_data)
             }
         }
-
-        /**
-         * Refresh
-         * */
-        //binding.swipeRefreshLayout.setOnRefreshListener {}
-    }
-
-    private fun initViewModel() {
-        Timber.i("$TAG::initViewModel()")
-        weatherDataViewModel = ViewModelProvider(requireActivity())[WeatherDataViewModel::class.java]
     }
 }
