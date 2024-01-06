@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import java.text.SimpleDateFormat
+import java.util.Date
 
 object WeatherUtil {
 
@@ -16,10 +17,19 @@ object WeatherUtil {
     const val PAGE_NO = 1
     const val NUM_OF_ROWS = 1000
     const val DATA_TYPE = "JSON"
-    const val BASE_DATE = "20231228"
+    var BASE_DATE = "20240101"
     const val BASE_TIME = "0500"
     const val NX = "55"
     const val NY = "127"
+
+    /**
+     ** 금일 날짜
+     */
+    fun getTodayDate() {
+        val currentDate = Date()
+        val dateFormat = SimpleDateFormat("yyyyMMdd")
+        BASE_DATE = dateFormat.format(currentDate)
+    }
 
     /**
      ** 날짜 format 변경

@@ -34,6 +34,7 @@ class WeatherDataActivity : BaseActivity<ActivityWeatherDataBinding>() {
         Timber.i("$TAG::init()")
 
         if(weatherDataViewModel.weatherData.isEmpty()) {
+            WeatherUtil.getTodayDate()
             getWeatherData()
         }
     }
